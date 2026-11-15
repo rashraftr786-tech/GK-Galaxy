@@ -7,9 +7,9 @@
 <meta name="description" content="A colourful, mobile-first General Knowledge learning and MCQ app for primary learners.">
 <title>General Knowledge Galaxy | Learning Experience — v3.0</title>
 <style>
-:root{--ink:#17213d;--navy:#111a3a;--blue:#3458db;--cyan:#19c5c8;--gold:#ffca63;--pink:#ff6f91;--paper:#f5f7ff;--muted:#68728c;--green:#17a875}
+:root{--ink:#17213d;--navy:#111a3a;--blue:#3458db;--cyan:#19c5c8;--gold:#ffca63;--pink:#ff6f91;--paper:#f5f7ff;--muted:#68728c;--green:#17a875;--violet:#7654e8;--coral:#ff6d83;--lime:#27b985;--sky:#27a9e8;--sun:#ffb938}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 10%,#d8e6ff 0,transparent 28%),radial-gradient(circle at 90% 25%,#ffe3ef 0,transparent 25%),linear-gradient(135deg,#f7f9ff,#e9f3ff 55%,#f8f1ff);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:12px}
-button{font:inherit;cursor:pointer;border:0}.wrap{width:min(430px,100%);height:min(900px,calc(100vh - 24px));height:min(900px,calc(100dvh - 24px));min-height:0;margin:auto;padding:12px;display:flex;flex-direction:column;overflow:hidden;border-radius:30px;background:#f6f8ff;box-shadow:0 25px 80px #17234c35;border:1px solid #ffffffaa}
+button{font:inherit;cursor:pointer;border:0}.wrap{width:min(520px,100%);height:100vh;height:100dvh;max-height:none;min-height:0;padding:10px;margin:0 auto;border-radius:0;overflow:hidden;display:flex;flex-direction:column;gap:8px;background:#f6f8ff;box-shadow:0 25px 80px #17234c35;border:1px solid #ffffffaa}
 .hero{position:relative;overflow:hidden;flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;border-radius:26px;padding:28px 23px 24px;color:white;background:linear-gradient(125deg,#111a3a,#283e91 58%,#087e9b);box-shadow:0 22px 50px #18285a42,inset 0 1px 0 #ffffff55}
 .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(1px);pointer-events:none}.hero:before{width:260px;height:260px;right:-55px;top:-105px;background:linear-gradient(135deg,#ffffff30,#19c5c855);box-shadow:0 0 0 24px #ffffff0c,0 0 0 52px #ffffff08}.hero:after{width:130px;height:130px;right:24%;bottom:-90px;background:#ffca6350}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border:1px solid #ffffff55;border-radius:99px;background:#ffffff18;font-size:12px;letter-spacing:1.1px;text-transform:uppercase}
@@ -215,6 +215,128 @@ button:disabled{filter:grayscale(.25);}
 @media(max-width:520px){.watch-grid{gap:8px}.watch-card{padding:8px 6px 7px;border-radius:16px}.watch-title{font-size:11px}.watch{height:91px}.watch svg{height:94px}.watch strong{font-size:17px}.watch-card small{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.watch-needle,.watch-value{transition:none!important}}
 
+/* --- PREMIUM 3D & ANIMATION OVERHAUL --- */
+body {
+  background: radial-gradient(circle at 10% 10%, #e0f2fe 0%, transparent 40%),
+              radial-gradient(circle at 90% 90%, #fce7f3 0%, transparent 40%),
+              linear-gradient(135deg, #f8fafc, #e2e8f0);
+  background-attachment: fixed;
+}
+.wrap {
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.15), 0 20px 40px -10px rgba(0,0,0,0.05);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.8);
+}
+.hero {
+  background: linear-gradient(135deg, #1e1b4b, #312e81, #0ea5e9, #06b6d4);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+  box-shadow: inset 0 0 40px rgba(255,255,255,0.1), 0 20px 40px -10px rgba(14, 165, 233, 0.4);
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.hero h1 {
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.5);
+}
+.hero .badge {
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
+}
+.btn.primary {
+  background: linear-gradient(145deg, #fbbf24, #f59e0b);
+  color: #451a03;
+  box-shadow: 0 6px 0 #b45309, 0 12px 22px rgba(180, 83, 9, 0.4);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.05);
+}
+.stat {
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
+  box-shadow: 0 4px 0 #cbd5e1, 0 8px 16px rgba(0,0,0,0.05);
+  border: 1px solid #fff;
+  transition: transform 0.2s ease;
+}
+.stat:hover { transform: translateY(-3px); }
+.fact {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  box-shadow: 0 8px 0 #e2e8f0, 0 12px 24px rgba(0,0,0,0.05);
+  border: 1px solid #fff;
+}
+.tab {
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
+  box-shadow: 0 4px 0 #cbd5e1;
+}
+.tab.active {
+  background: linear-gradient(145deg, #8b5cf6, #6366f1) !important;
+  box-shadow: 0 4px 0 #4338ca, 0 6px 12px rgba(99, 102, 241, 0.4) !important;
+  transform: translateY(2px);
+}
+.dock {
+  background: linear-gradient(135deg, #1e1b4b, #312e81, #0f172a);
+  box-shadow: 0 8px 0 #0f172a, 0 12px 24px rgba(0,0,0,0.3);
+}
+.dock button.active {
+  background: linear-gradient(145deg, #fcd34d, #f59e0b) !important;
+  color: #451a03 !important;
+  box-shadow: 0 4px 0 #b45309 !important;
+  transform: translateY(2px);
+}
+.option {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  box-shadow: 0 4px 0 #e2e8f0, 0 6px 12px rgba(0,0,0,0.05) !important;
+  border: 1px solid #fff !important;
+}
+.option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #cbd5e1 !important;
+}
+.option.correct {
+  background: linear-gradient(145deg, #d1fae5, #a7f3d0) !important;
+  color: #065f46 !important;
+  border-color: #34d399 !important;
+  box-shadow: 0 4px 0 #10b981 !important;
+}
+.option.wrong {
+  background: linear-gradient(145deg, #fee2e2, #fecaca) !important;
+  color: #991b1b !important;
+  border-color: #f87171 !important;
+  box-shadow: 0 4px 0 #ef4444 !important;
+}
+.chapter-tile {
+  background: linear-gradient(145deg, #ffffff, #f0f9ff);
+  box-shadow: 0 6px 0 #bae6fd, 0 10px 20px rgba(0,0,0,0.05) !important;
+  border: 1px solid #fff;
+  transition: all 0.2s ease;
+}
+.chapter-tile:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 0 #7dd3fc, 0 15px 25px rgba(0,0,0,0.08) !important;
+}
+.watch-card {
+  box-shadow: 0 8px 0 #cbd5e1, 0 15px 30px rgba(0,0,0,0.08);
+  border: 1px solid #fff;
+  transition: transform 0.3s ease;
+}
+.watch-card:hover { transform: translateY(-5px); }
+.watch-card.watch-blue { background: linear-gradient(145deg, #e0f2fe, #f3e8ff); }
+.watch-card.watch-pink { background: linear-gradient(145deg, #fce7f3, #fef3c7); }
+/* Floating animation for hero shapes */
+.hero:before { animation: float 6s ease-in-out infinite; }
+.hero:after { animation: float 8s ease-in-out infinite reverse; }
+@keyframes float {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-15px) scale(1.05); }
+  100% { transform: translateY(0px) scale(1); }
+}
 </style>
 </head>
 <body>
